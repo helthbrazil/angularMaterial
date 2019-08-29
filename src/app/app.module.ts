@@ -10,12 +10,20 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Interceptor } from './interceptor/interceptor.module';
+import { ComponentsComponent } from './pages/components/components.component';
+import { AngularHelpComponent } from './pages/angular-help/angular-help.component';
+import { GraficosComponent } from './pages/graficos/graficos.component';
+import { PaddingDirective } from './directives/padding.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ComponentsComponent,
+    AngularHelpComponent,
+    GraficosComponent,
+    PaddingDirective
   ],
   imports: [
     BrowserModule,

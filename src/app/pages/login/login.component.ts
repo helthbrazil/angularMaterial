@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-login',
@@ -31,8 +32,8 @@ export class LoginComponent implements OnInit {
     setTimeout(() => { // SIMULATE DELAY
       this.loginService.logar(this.formulario.value).subscribe((res) => {
         this.formHasError = false;
-        localStorage.setItem('token', res.headers.get('Authorization'));
-        this.router.navigate(['/principal']);
+        localStorage.setItem(User.STRING_TOKEN, res.headers.get('Authorization'));
+        this.router.navigate(['']);
         this.showLoading = false;
       }, err => {
         this.formHasError = true;
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
         this.snackBar.open('Usuário ou senha inválidos', undefined, { duration: 4000/* , panelClass: ['error-snackbar'] */ });
         this.showLoading = false;
       });
-    }, 3000);
+    }, 1000);
   }
 
 }

@@ -54,42 +54,17 @@ export class PrincipalComponent implements OnInit, OnDestroy {
         const url = e.url;
         switch (url) {
           case '/':
-          case '/demo':
-            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/demo');
+          case '/components':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/components');
             break;
 
-          case '/busca_cep':
-            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/busca_cep');
-            break;
-
-          case '/angular_docs':
-            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/angular_docs');
-            break;
-
-          case '/anotacoes':
-            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/anotacoes');
-            break;
-
-          case '/drag_drop':
-            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/drag_drop');
-            break;
-
-          case '/diretivas':
-            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/diretivas');
-            break;
-
-          case '/tabelas':
-            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/tabelas');
+          case '/angular':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/angular');
             break;
 
           case '/graficos':
             this.itemSelecionado = this.fillerNav.find(item => item.componente === '/graficos');
             break;
-
-          case '/sobre':
-            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/sobre');
-            break;
-
 
           default:
             /* this.item = '/pessoa/detail'; */
@@ -101,15 +76,10 @@ export class PrincipalComponent implements OnInit, OnDestroy {
 
   itensMenu() {
     this.fillerNav = new Array<ItemMenu>();
-    this.fillerNav.push({ label: 'componentes', componente: '/demo', icon: 'assets/images/svg/demo.svg' });
-    this.fillerNav.push({ label: 'cep', componente: '/busca_cep', icon: 'assets/images/svg/location.svg' });
-    this.fillerNav.push({ label: 'angular', componente: '/angular_docs', icon: 'assets/images/svg/angular.svg' });
-    this.fillerNav.push({ label: 'anotacoes', componente: '/anotacoes', icon: 'assets/images/svg/notes.svg' });
-    this.fillerNav.push({ label: 'dragDrop', componente: '/drag_drop', icon: 'assets/images/svg/move.svg' });
-    this.fillerNav.push({ label: 'diretivas', componente: '/diretivas', icon: 'assets/images/svg/move.svg' });
-    this.fillerNav.push({ label: 'tabelas', componente: '/tabelas', icon: 'assets/images/svg/table.svg' });
+    this.fillerNav.push({ label: 'componentes', componente: '/components', icon: 'assets/images/svg/demo.svg' });
+    this.fillerNav.push({ label: 'angular', componente: '/angular', icon: 'assets/images/svg/angular.svg' });
     this.fillerNav.push({ label: 'gráficos', componente: '/graficos', icon: 'assets/images/svg/charts.svg' });
-    this.fillerNav.push({ label: 'sobre', componente: '/sobre', icon: 'assets/images/svg/information.svg' });
+
     /* this.fillerNav.push({ label: 'Teste', componente: '/teste', icon: 'assets/images/svg/e.svg' }); */
   }
 
@@ -118,7 +88,7 @@ export class PrincipalComponent implements OnInit, OnDestroy {
   }
 
   deslogar() {
-    localStorage.removeItem('token');
+    localStorage.removeItem(User.STRING_TOKEN);
     this.router.navigate(['/login']);
   }
 

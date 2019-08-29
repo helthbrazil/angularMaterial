@@ -3,22 +3,49 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ComponentsComponent } from './pages/components/components.component';
+import { AngularHelpComponent } from './pages/angular-help/angular-help.component';
+import { GraficosComponent } from './pages/graficos/graficos.component';
 
 const routes: Routes = [
   {
     pathMatch: 'full',
     path: '',
-    redirectTo: 'principal'
+    redirectTo: ''
   },
   {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: 'principal',
+    path: '',
     component: PrincipalComponent,
-    canActivate: [AuthGuard]
-  }
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'components',
+      },
+      {
+        path: 'components',
+        component: ComponentsComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'angular',
+        component: AngularHelpComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'graficos',
+        component: GraficosComponent,
+        canActivate: [AuthGuard]
+      }
+    ]
+  },
+
+
 ];
 
 @NgModule({
