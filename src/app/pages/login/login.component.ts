@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         this.snackBar.open('Usuário ou senha inválidos', undefined, { duration: 4000/* , panelClass: ['error-snackbar'] */ });
         this.showLoading = false;
       });
-    }, 1000);
+    }, 300);
   }
 
 }

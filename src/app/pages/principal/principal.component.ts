@@ -30,7 +30,8 @@ export class PrincipalComponent implements OnInit, OnDestroy {
   private _mobileQueryListener: () => void;
 
   constructor(private router: Router, private principalService: PrincipalService,
-    media: MediaMatcher, changeDetectorRef: ChangeDetectorRef, private bottomSheet: MatBottomSheet) {
+    media: MediaMatcher, changeDetectorRef: ChangeDetectorRef, private bottomSheet: MatBottomSheet,
+    private loginService: LoginService) {
 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -88,8 +89,11 @@ export class PrincipalComponent implements OnInit, OnDestroy {
   }
 
   deslogar() {
-    localStorage.removeItem(User.STRING_TOKEN);
-    this.router.navigate(['/login']);
+    this.loginService.deslogar().subscribe(() => {
+      console.log('login realizado com sucesso');
+    }, err => {
+      console.error('Erro ao deslogar');
+    });
   }
 
 }
