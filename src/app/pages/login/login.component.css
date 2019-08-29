@@ -1,0 +1,5 @@
+.main-image {
+  margin: 30px;
+  width: calc(100% - 60px);
+  padding-top: 30px;
+}

@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f8fa;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.spacer {
+  flex: 1 1 auto !important;
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+mat-form-field {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-card {
+  min-width: 500px;
+}
+
+.example-header-image {
+  background-image: url('assets/images/god_of_war.png');
+  background-size: cover;
+}
+
+.error-snackbar {
+  background: rgb(154, 47, 52);
+  color: white;
+}

@@ -1,0 +1,41 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">{{title}}</h1>
+    <span class="example-spacer"></span>
+    <mat-icon matTooltip="Adicionar Favorito" class="example-icon">favorite</mat-icon>
+    <mat-icon matTooltip="Excluir Item" class="example-icon">delete</mat-icon>
+    <div style="float: right;">
+      <button matTooltip="Opções" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button (click)="deslogar()" mat-menu-item>
+          <img class="img-menu" src="assets/images/svg/logout.svg" width="26" alt="">
+          <span class="item-menu2">deslogar</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container autosize=true class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" [opened]="opened">
+      <mat-nav-list>
+        <a matTooltip="{{nav.label}}" matTooltipClass="tooltip-red" matTooltipPosition="below"
+          [class.selecionado]="nav === itemSelecionado" mat-list-item routerLink="{{nav.componente}}"
+          *ngFor="let nav of fillerNav">
+          <img class="item-menu" width="24" height="24" src="{{nav.icon}}" alt="">
+          <!-- {{nav.label | translate}} -->
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content [@fadeAnimation]="getRouterOutletState(o)">
+      <router-outlet #o="outlet"></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
