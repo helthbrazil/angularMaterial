@@ -19,6 +19,7 @@ import { PaddingDirective } from './directives/padding.directive';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { LoadingComponent } from './pages/loading/loading.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -32,7 +33,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ComponentsComponent,
     AngularHelpComponent,
     GraficosComponent,
-    PaddingDirective
+    PaddingDirective,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

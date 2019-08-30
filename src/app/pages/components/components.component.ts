@@ -12,6 +12,8 @@ export interface Section {
 })
 export class ComponentsComponent implements OnInit {
 
+  showLoadingAngular = true;
+
   public config = {
     wheelSpeed: 1,
     swipeEasing: true
@@ -83,9 +85,15 @@ export class ComponentsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      console.log('teste');
+      this.showLoadingAngular = false;
+    }, 500);
+  }
 
   ngOnInit() {
+
   }
 
 }

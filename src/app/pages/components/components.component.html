@@ -1,4 +1,5 @@
-<perfect-scrollbar [config]='config'>
+<app-loading *ngIf="showLoadingAngular"></app-loading>
+<perfect-scrollbar *ngIf="!showLoadingAngular"  [config]='config'>
   <mat-list>
     <h3 mat-subheader>Folders</h3>
     <mat-list-item *ngFor="let folder of folders">
