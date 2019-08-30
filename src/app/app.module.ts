@@ -15,6 +15,15 @@ import { AngularHelpComponent } from './pages/angular-help/angular-help.componen
 import { GraficosComponent } from './pages/graficos/graficos.component';
 import { PaddingDirective } from './directives/padding.directive';
 
+// SCROLLBAR
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,9 +42,15 @@ import { PaddingDirective } from './directives/padding.directive';
     Interceptor,
     HttpClientModule,
     MaterialModule,
+    PerfectScrollbarModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

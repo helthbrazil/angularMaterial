@@ -7,6 +7,7 @@ import { Router, NavigationStart } from '@angular/router';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material';
 import { trigger, animate, style, group, animateChild, query, stagger, transition, state } from '@angular/animations';
 import { fadeAnimation } from '../../animations/fade.animation';
+import { PerfectScrollbarConfig } from 'ngx-perfect-scrollbar';
 
 export interface ItemMenu {
   label: string;
