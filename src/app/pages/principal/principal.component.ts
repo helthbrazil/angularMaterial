@@ -23,7 +23,7 @@ export interface ItemMenu {
 })
 export class PrincipalComponent implements OnInit, OnDestroy {
 
-  title = 'Nome do sistema';
+  title = 'NSistema teste';
   mobileQuery: MediaQueryList;
   opened: boolean;
   fillerNav: Array<ItemMenu>;
