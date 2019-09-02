@@ -23,7 +23,7 @@ export interface ItemMenu {
 })
 export class PrincipalComponent implements OnInit, OnDestroy {
 
-  title = 'NSistema teste';
+  title = 'Angular Project';
   mobileQuery: MediaQueryList;
   opened: boolean;
   fillerNav: Array<ItemMenu>;
