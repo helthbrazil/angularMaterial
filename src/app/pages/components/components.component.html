@@ -1,5 +1,10 @@
 <app-loading *ngIf="showLoadingAngular"></app-loading>
 <perfect-scrollbar *ngIf="!showLoadingAngular"  [config]='config'>
+
+  <div appPadding>
+    <button mat-flat-button color="primary" class="mat-elevation-z4">Teste</button>
+  </div>
+
   <mat-list>
     <h3 mat-subheader>Folders</h3>
     <mat-list-item *ngFor="let folder of folders">

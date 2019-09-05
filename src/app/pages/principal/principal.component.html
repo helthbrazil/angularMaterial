@@ -1,5 +1,5 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="primary" class="example-toolbar">
+  <mat-toolbar color="primary" class="example-toolbar toolbar mat-elevation-z10">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -30,7 +30,6 @@
           [class.selecionado]="nav === itemSelecionado" mat-list-item routerLink="{{nav.componente}}"
           *ngFor="let nav of fillerNav">
           <img class="item-menu" width="24" height="24" src="{{nav.icon}}" alt="">
-          <!-- {{nav.label | translate}} -->
         </a>
       </mat-nav-list>
     </mat-sidenav>

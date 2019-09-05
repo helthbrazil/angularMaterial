@@ -1,13 +1,10 @@
 import { LoginService } from 'src/app/services/login.service';
 import { PrincipalService } from './principal.service';
-import { User } from 'src/app/shared/models/user';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
-import { MatBottomSheet, MatBottomSheetRef } from '@angular/material';
-import { trigger, animate, style, group, animateChild, query, stagger, transition, state } from '@angular/animations';
+import { MatBottomSheet} from '@angular/material';
 import { fadeAnimation } from '../../animations/fade.animation';
-import { PerfectScrollbarConfig } from 'ngx-perfect-scrollbar';
 
 export interface ItemMenu {
   label: string;

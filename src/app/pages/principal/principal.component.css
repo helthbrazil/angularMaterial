@@ -8,6 +8,10 @@
   right: 0;
 }
 
+.mat-toolbar {
+  position: relative;
+}
+
 .example-is-mobile .example-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
