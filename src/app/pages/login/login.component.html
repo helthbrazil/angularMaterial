@@ -12,20 +12,22 @@
         <img mat-card-image class="main-image" src="https://cdn.worldvectorlogo.com/logos/slack.svg" width="100"
           alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <mat-form-field class="example-full-width">
-            <input required formControlName="username" matInput type="text" placeholder="Nome" value="">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Nome</mat-label>
+            <input required formControlName="username" matInput type="text" value="">
             <mat-error *ngIf="formHasError">Usuário é obrigatório</mat-error>
             <mat-hint>Informe o usuário</mat-hint>
           </mat-form-field>
           <br>
-          <mat-form-field class="example-full-width">
-            <input required formControlName="password" type="password" matInput placeholder="Senha" value="">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Senha</mat-label>
+            <input required formControlName="password" type="password" matInput value="">
             <mat-error *ngIf="formHasError">Senha é obrigatória</mat-error>
             <mat-hint>Informe a senha</mat-hint>
           </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
-          <button [disabled]="!form.valid" mat-raised-button color="primary">Logar</button>
+          <button [disabled]="!form.valid" mat-raised-button color="accent">Logar</button>
         </mat-card-actions>
       </mat-card>
 
