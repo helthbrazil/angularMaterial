@@ -6,7 +6,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -36,7 +36,7 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
           this.router.navigate(['/login']);
         }
       }
-      return of(error);
+      return throwError(error);
     }) as any);
   }
 }
