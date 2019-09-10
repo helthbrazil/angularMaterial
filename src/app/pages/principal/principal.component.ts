@@ -1,7 +1,7 @@
 import { LoginService } from 'src/app/services/login.service';
 import { PrincipalService } from './principal.service';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { MatBottomSheet } from '@angular/material';
 import { fadeAnimation } from '../../animations/fade.animation';
@@ -20,6 +20,7 @@ export interface ItemMenu {
 })
 export class PrincipalComponent implements OnInit, OnDestroy {
 
+  @ViewChild('snav') snav;
   title = 'Angular Project';
   mobileQuery: MediaQueryList;
   opened: boolean;
@@ -80,7 +81,11 @@ export class PrincipalComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.itensMenu();
-    this.opened = true;
+    if (!this.mobileQuery.matches) {
+      this.opened = true;
+    } else {
+      this.opened = false;
+    }
     this.routeEvent(this.router);
     if (this.router.url) {
       this.atualizarIconeSelecionado(this.router.url);
@@ -107,6 +112,12 @@ export class PrincipalComponent implements OnInit, OnDestroy {
     }, err => {
       console.error('Erro ao deslogar');
     });
+  }
+
+  selecionarItemMenu() {
+    if (this.mobileQuery.matches) {
+      this.snav.toggle();
+    }
   }
 
 }
