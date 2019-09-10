@@ -20,6 +20,8 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { LoadingComponent } from './pages/loading/loading.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './pages/map/map.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -34,7 +36,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AngularHelpComponent,
     GraficosComponent,
     PaddingDirective,
-    LoadingComponent
+    LoadingComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ReactiveFormsModule,
     Interceptor,
     HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBt-52lhTgDhmXzLgWR-ZxzfmmEfbuV3so'
+    }),
     MaterialModule,
     PerfectScrollbarModule,
     BrowserAnimationsModule

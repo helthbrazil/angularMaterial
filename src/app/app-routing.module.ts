@@ -6,6 +6,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { ComponentsComponent } from './pages/components/components.component';
 import { AngularHelpComponent } from './pages/angular-help/angular-help.component';
 import { GraficosComponent } from './pages/graficos/graficos.component';
+import { MapComponent } from './pages/map/map.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,11 @@ const routes: Routes = [
       {
         path: 'graficos',
         component: GraficosComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'map',
+        component: MapComponent,
         canActivate: [AuthGuard]
       }
     ]
