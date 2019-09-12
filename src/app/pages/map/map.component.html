@@ -2,13 +2,16 @@
   <h2> {{texto}}</h2>
 
   <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+    <agm-marker-cluster
+      imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+      <agm-marker *ngFor="let icone of icones" [latitude]="icone?.latitude" [longitude]="icone?.longitude"
+        iconAnchorX="0" iconAnchorY="0" [iconUrl]="icone?.icone">
+        <agm-info-window>
+          <strong>{{icone?.descricao}}</strong>
+        </agm-info-window>
+      </agm-marker>
+    </agm-marker-cluster>
 
-    <agm-marker *ngFor="let icone of icones" [latitude]="icone?.latitude" [longitude]="icone?.longitude" iconAnchorX="0"
-      iconAnchorY="0" [iconUrl]="icone?.icone">
-      <agm-info-window>
-        <strong>{{icone?.descricao}}</strong>
-      </agm-info-window>
-    </agm-marker>
 
   </agm-map>
 </div>

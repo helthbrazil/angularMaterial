@@ -21,6 +21,7 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { LoadingComponent } from './pages/loading/loading.component';
 import { AgmCoreModule } from '@agm/core';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 import { MapComponent } from './pages/map/map.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -49,6 +50,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBt-52lhTgDhmXzLgWR-ZxzfmmEfbuV3so'
     }),
+    AgmJsMarkerClustererModule,
     MaterialModule,
     PerfectScrollbarModule,
     BrowserAnimationsModule
