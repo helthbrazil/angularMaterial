@@ -19,9 +19,9 @@ export class MapComponent implements OnInit {
   public iconBase = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
 
   texto = 'Estádios de futebol';
-  lat = -19.908867;
-  lng = -43.9180767;
-  zoom = 17;
+  lat = -12.3156489;
+  lng = -53.3928137;
+  zoom = 4.5;
 
   stopTest = false;
 
@@ -34,59 +34,30 @@ export class MapComponent implements OnInit {
 
   private adicionarEstadios() {
     this.icones = new Array<Mark>();
-    this.icones.push({
-      latitude: -19.865862,
-      longitude: -43.970895,
-      icone: {
-        url: `${this.baseIcones}cruzeiro.png`,
-        scaledSize: {
-          width: 100,
-          height: 100
-        }
-      },
-      descricao: 'Mineirão. Mais conhecido como Toca III. O abatedouro de franguinhas.'
-    });
+    this.adicionarEstadio(-19.865862, -43.970895, 'cruzeiro', 'Estádio Mineirão');
+    this.adicionarEstadio(-19.9088070, -43.9180767, 'atletico', 'Estádio Independência');
+    this.adicionarEstadio(-19.9084170, -43.9180767, 'america', 'Estádio Independência');
+    this.adicionarEstadio(-22.9121115, -43.2300097, 'flamengo', 'Estádio Maracanã');
+    this.adicionarEstadio(-22.9121115, -43.2304097, 'fluminense', 'Estádio Maracanã');
+    this.adicionarEstadio(-22.891276, -43.2283646, 'vasco', 'Estádio São Januário');
+    this.adicionarEstadio(-22.8933025, -43.2924699, 'botafogo', 'Estádio Nilton Santos');
+  }
 
-    this.icones.push({
-      latitude: -19.9088070,
-      longitude: -43.9180767,
-      icone: {
-        url: `${this.baseIcones}atletico.png`,
-        scaledSize: {
-          width: 65,
-          height: 90
-        }
-      },
-      descricao: 'Independência. Mas conhecido como casa das frangas e do coelhinho.'
-    });
-
-    this.icones.push({
-      latitude: -19.9084170,
-      longitude: -43.9180767,
-      icone: {
-        url: `${this.baseIcones}america.png`,
-        scaledSize: {
-          width: 90,
-          height: 90
-        }
-      },
-      descricao: 'Independência. Mas conhecido como casa das frangas e do coelhinho.'
-    });
-
-
-    this.icones.push({
-      latitude: -22.9121115,
-      longitude: -43.2310097,
-      icone: {
-        url: `${this.baseIcones}flamengo.png`,
-        scaledSize: {
-          width: 90,
-          height: 90
-        }
-      },
-      descricao: 'Independência. Mas conhecido como casa das frangas e do coelhinho.'
-    });
-
+  private adicionarEstadio(latitude: number, longitude: number, icone: string, descricao: string) {
+    if (this.icones) {
+      this.icones.push({
+        latitude: latitude,
+        longitude: longitude,
+        icone: {
+          url: `${this.baseIcones}${icone}.png`,
+          scaledSize: {
+            width: 90,
+            height: 90
+          }
+        },
+        descricao: descricao
+      });
+    }
   }
 
   testandoGPS() {
