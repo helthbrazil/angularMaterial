@@ -34,13 +34,27 @@ export class MapComponent implements OnInit {
 
   private adicionarEstadios() {
     this.icones = new Array<Mark>();
+    // MG
     this.adicionarEstadio(-19.865862, -43.970895, 'cruzeiro', 'Estádio Mineirão');
     this.adicionarEstadio(-19.9088070, -43.9180767, 'atletico', 'Estádio Independência');
     this.adicionarEstadio(-19.9084170, -43.9180767, 'america', 'Estádio Independência');
+
+    // RJ
     this.adicionarEstadio(-22.9121115, -43.2300097, 'flamengo', 'Estádio Maracanã');
     this.adicionarEstadio(-22.9121115, -43.2304097, 'fluminense', 'Estádio Maracanã');
     this.adicionarEstadio(-22.891276, -43.2283646, 'vasco', 'Estádio São Januário');
     this.adicionarEstadio(-22.8933025, -43.2924699, 'botafogo', 'Estádio Nilton Santos');
+
+    // RS
+    this.adicionarEstadio(-30.0654933, -51.2358943, 'inter', 'Estádio Beira Rio');
+    this.adicionarEstadio(-29.9739856, -51.1949256, 'gremio', 'Estádio Arena do Grêmio');
+
+    // SP
+    this.adicionarEstadio(-23.6000892, -46.7201507, 'sao-paulo', 'Estádio Morumbi');
+    this.adicionarEstadio(-23.527462, -46.6786023, 'palmeiras', 'Allianz Parque');
+    this.adicionarEstadio(-23.5453273, -46.4743463, 'corinthians', 'Arena Corinthians');
+    this.adicionarEstadio(-23.9511325, -46.3389195, 'santos', 'Vila Belmiro');
+
   }
 
   private adicionarEstadio(latitude: number, longitude: number, icone: string, descricao: string) {
