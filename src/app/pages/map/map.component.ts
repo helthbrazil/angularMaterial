@@ -19,9 +19,9 @@ export class MapComponent implements OnInit {
   public iconBase = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
 
   texto = 'Estádios de futebol';
-  lat = -12.3156489;
-  lng = -53.3928137;
-  zoom = 4.5;
+  lat = -25.8174792;
+  lng = -53.0555951;
+  zoom = 6;
 
   stopTest = false;
 
@@ -54,6 +54,27 @@ export class MapComponent implements OnInit {
     this.adicionarEstadio(-23.527462, -46.6786023, 'palmeiras', 'Allianz Parque');
     this.adicionarEstadio(-23.5453273, -46.4743463, 'corinthians', 'Arena Corinthians');
     this.adicionarEstadio(-23.9511325, -46.3389195, 'santos', 'Vila Belmiro');
+
+    // PR
+    this.adicionarEstadio(-25.4482116, -49.2780809, 'athletico', 'Arena da Baixada');
+    this.adicionarEstadio(-25.4214176, -49.2601248, 'coritiba', 'Couto Pereira');
+    this.adicionarEstadio(-25.4394883, -49.2559363, 'parana', 'Vila Capanema');
+
+    // SC
+    this.adicionarEstadio(-27.1040407, -52.6073838, 'chapecoense', 'Arena Condá');
+    this.adicionarEstadio(-27.6665434, -48.5319978, 'avai', 'Estádio do Avaí');
+    this.adicionarEstadio(-27.5859202, -48.5869533, 'figueirense', 'Orlando Escarpelli');
+
+    // BA
+    this.adicionarEstadio(-12.9790485, -38.5047977, 'bahia', 'Arena Fonte Nova');
+    this.adicionarEstadio(-12.9192663, -38.4278258, 'vitoria', 'Barradão');
+
+    // PE
+    this.adicionarEstadio(-8.0629168, -34.9035129, 'sport', 'Arena Fonte Nova');
+    this.adicionarEstadio(-8.0406625, -35.0432057, 'nautico', 'Arena Fonte Nova');
+    this.adicionarEstadio(-8.0266939, -34.8932999, 'santa-cruz', 'Arena Fonte Nova');
+
+
 
   }
 

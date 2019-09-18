@@ -21,6 +21,7 @@ const routes: Routes = [
   {
     path: '',
     component: PrincipalComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -29,19 +30,23 @@ const routes: Routes = [
       },
       {
         path: 'components',
-        component: ComponentsComponent
+        component: ComponentsComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'angular',
-        component: AngularHelpComponent
+        component: AngularHelpComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'graficos',
-        component: GraficosComponent
+        component: GraficosComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'map',
         component: MapComponent,
+        canActivate: [AuthGuard]
       }
     ]
   },
