@@ -1,8 +1,7 @@
+<mat-progress-bar style="width: 100%;" *ngIf="showLoading" color="warn" mode="indeterminate"></mat-progress-bar>
 <div class="background" *ngIf="!isMobile">
-
   <div class="content">
     <form #form="ngForm" [formGroup]="formulario" (ngSubmit)="logar()" class="example-form">
-      <mat-progress-bar *ngIf="showLoading" color="warn" mode="indeterminate"></mat-progress-bar>
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
@@ -36,11 +35,10 @@
 </div>
 
 <!-- Mobile -->
-<div style="margin-top: 100px; padding: 20px" *ngIf="isMobile">
+<div style="margin-top: 50px; padding: 20px" *ngIf="isMobile">
     <img src="https://cdn.worldvectorlogo.com/logos/slack.svg" width="200"
     alt="Photo of a Shiba Inu">
-  <form #form="ngForm" [formGroup]="formulario" (ngSubmit)="logar()" class="example-form">
-    <mat-progress-bar style="width: 100%;" *ngIf="showLoading" color="warn" mode="indeterminate"></mat-progress-bar>
+  <form #form="ngForm" [formGroup]="formulario" (ngSubmit)="logar()" class="example-form">    
     <div class="center">
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Nome</mat-label>
