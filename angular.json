@@ -30,7 +30,7 @@
             "scripts": []
           },
           "configurations": {
-            "prod": {
+            "production": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -38,72 +38,6 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            },
-            "dev": {             
-              "optimization": false,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": false,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            },
-            "dev-mob": {             
-              "optimization": false,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.mob.ts"
-                }
-              ],
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": false,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            },
-            "prod-mob": {             
-              "optimization": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.mob.prod.ts"
-                }
-              ],
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -128,17 +62,8 @@
             "browserTarget": "jwt:build"
           },
           "configurations": {
-            "prod": {
-              "browserTarget": "jwt:build:prod"
-            },
-            "dev": {
-              "browserTarget": "jwt:build:dev"
-            },
-            "dev-mob": {
-              "browserTarget": "jwt:build:dev-mob"
-            },
-            "prod-mob": {
-              "browserTarget": "jwt:build:prod-mob"
+            "production": {
+              "browserTarget": "jwt:build:production"
             }
           }
         },
@@ -157,8 +82,7 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css",
-              "src/ionic.css"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
