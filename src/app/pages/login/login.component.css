@@ -3,3 +3,11 @@
   width: calc(100% - 60px);
   padding-top: 30px;
 }
+
+.center {
+  margin: auto;
+}
+
+.mat-form-field-flex{
+  width: 97% !important;
+}

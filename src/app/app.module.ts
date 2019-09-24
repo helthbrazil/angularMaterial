@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { LoadingComponent } from './pages/loading/loading.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 import { MapComponent } from './pages/map/map.component';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -47,6 +48,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ReactiveFormsModule,
     Interceptor,
     HttpClientModule,
+    DeviceDetectorModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBt-52lhTgDhmXzLgWR-ZxzfmmEfbuV3so'
     }),
@@ -55,6 +57,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PerfectScrollbarModule,
     BrowserAnimationsModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
