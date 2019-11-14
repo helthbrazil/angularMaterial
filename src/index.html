@@ -13,6 +13,18 @@
 
   <script src="https://unpkg.com/@ionic/core@4.1.0/dist/ionic.js"></script>
 
+  <!-- Open signal -->
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "8b955582-7633-49c4-bd2d-036c4de42416",
+      });
+    });
+
+  </script>
+
   <!-- inline spinner styles to be able to display spinner right away -->
   <style type="text/css">
     body,
